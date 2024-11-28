@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseña tu Plan de Integración de IA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #01BD39;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #01BD39;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #019e2f;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f0f0f0;
+            border-radius: 5px;
+        }
+        .cta {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .cta a {
+            text-decoration: none;
+            color: white;
+            background-color: #01BD39;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .cta a:hover {
+            background-color: #019e2f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Diseña tu Plan de Integración de IA</h1>
+        <p>Introduce los detalles de tu negocio y descubre cómo integrar inteligencia artificial de manera estratégica y eficiente.</p>
+        
+        <form id="planIAForm">
+            <div class="form-group">
+                <label for="area">Área principal de mejora:</label>
+                <select id="area" required>
+                    <option value="atencion_cliente">Atención al Cliente</option>
+                    <option value="marketing">Marketing</option>
+                    <option value="gestion_datos">Gestión de Datos</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="objetivo">Objetivo principal:</label>
+                <textarea id="objetivo" rows="3" placeholder="Ej. Mejorar la satisfacción del cliente, aumentar conversiones" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="recursos">Recursos actuales disponibles (opcional):</label>
+                <textarea id="recursos" rows="3" placeholder="Ej. CRM, equipo de marketing, datos históricos"></textarea>
+            </div>
+            <button type="button" onclick="generarPlan()">Generar Plan</button>
+        </form>
+        
+        <div id="resultado" class="result" style="display: none;"></div>
+        
+        <div class="cta">
+            <p>Revoluciona tu Negocio con el Poder del Chat Inteligente</p>
+            <a href="https://klicana.work/tdivKK">SÍ! INSCRIBIRME A LUCRACHAT IA!</a>
+        </div>
+    </div>
+
+    <script>
+        function generarPlan() {
+            const area = document.getElementById('area').value;
+            const objetivo = document.getElementById('objetivo').value;
+            const recursos = document.getElementById('recursos').value || "No especificado";
+
+            let recomendacion = "";
+            if (area === "atencion_cliente") {
+                recomendacion = `
+                    <li>Implementar un chatbot para responder automáticamente preguntas frecuentes.</li>
+                    <li>Configurar sistemas de escalado para consultas complejas a un agente humano.</li>
+                `;
+            } else if (area === "marketing") {
+                recomendacion = `
+                    <li>Usar herramientas de IA para segmentación avanzada y predicción de tendencias.</li>
+                    <li>Automatizar campañas publicitarias personalizadas basadas en datos de usuario.</li>
+                `;
+            } else if (area === "gestion_datos") {
+                recomendacion = `
+                    <li>Adoptar plataformas como Power BI o Tableau para análisis avanzado.</li>
+                    <li>Automatizar la recopilación y limpieza de datos para reportes más precisos.</li>
+                `;
+            }
+
+            const resultado = `
+                <h2>Plan de Integración de IA</h2>
+                <p><strong>Área de Mejora:</strong> ${area.replace("_", " ")}</p>
+                <p><strong>Objetivo Principal:</strong> ${objetivo}</p>
+                <p><strong>Recursos Actuales:</strong> ${recursos}</p>
+                <h3>Recomendaciones:</h3>
+                <ul>${recomendacion}</ul>
+                <p>¡Este plan está diseñado para ayudarte a integrar IA de manera efectiva y lograr tus objetivos estratégicos!</p>
+            `;
+
+            document.getElementById('resultado').innerHTML = resultado;
+            document.getElementById('resultado').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
